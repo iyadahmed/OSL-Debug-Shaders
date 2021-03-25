@@ -1,0 +1,8 @@
+shader Int2Str
+(
+int Value = 0,
+output string Text = "0"
+)
+{
+Text = format("%i", Value);
+}

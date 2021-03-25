@@ -1,0 +1,22 @@
+#include "oslutil.h"
+
+shader DrawString
+(
+    string Text = "",
+    int Repeat_U = 0,
+    int Repeat_V = 0,
+    int Jitter_Repeat = 0,
+    point UV = point(0.0, 0.0, 0.0),
+    float Scale = 60.0,
+    output float Value = 0.0
+)
+{
+
+    point st = UV;
+    float s = st[0];
+    float t = 1.0-st[1];
+    s *= Scale;
+    t *= Scale;
+    Value = draw_string(Text, s, t, Repeat_U, Repeat_V, Jitter_Repeat);
+}
+

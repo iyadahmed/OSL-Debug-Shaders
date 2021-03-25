@@ -1,0 +1,9 @@
+shader Float2Str
+(
+float Value = 0.0,
+int Decimal_Places = 1, 
+output string Text = ""
+)
+{
+Text = format(format("%.%if", Decimal_Places), Value);
+}
